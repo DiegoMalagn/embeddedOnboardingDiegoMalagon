@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "name": "Mac",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/opt/homebrew/Cellar/avr-gcc@9/9.4.0_1/avr/include/",
+                "/opt/homebrew/Cellar/avr-gcc@9/9.4.0_1/lib/avr-gcc/",
+                "/opt/homebrew/Cellar/avr-gcc@9/9.4.0_1/avr/lib/",
+                "/opt/homebrew/Cellar/avr-gcc@9/9.4.0_1/libexec/gcc/",
+                "/opt/homebrew/Cellar/avr-gcc@9/9.4.0_1/share/doc/",
+                "/opt/homebrew/Cellar/avr-gcc@9/9.4.0_1/share/man/"
+            ],
+            "defines": [],
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "macos-clang-arm64"
+        }
+    ],
+    "version": 4
+}
