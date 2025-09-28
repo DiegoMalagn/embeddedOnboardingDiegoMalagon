@@ -5,6 +5,7 @@
 #include <avr/io.h> //this library allows us to use the AVR input/output ports as PORTx and DDRx
 #include <util/delay.h> // this library allows us to use the _delay_ms() and _delay_us() functions
 #include <stdint.h> // this library allows us to use the uint8_t data type
+#include <string.h>
 
 #define lcdRS PB4
 #define lcdEN  PB3
@@ -83,12 +84,22 @@ int main(void){
 
     //initialize the LCD
     lcdInit();
-    //print hello world to the LCD
-    lcdPrint("Hello, DFR!");
-    //main loop
+    const char* inputMessage = " BARE METAL UHHHH";
+    int len = strlen(inputMessage);
+    int pos = 0;
+    
     while(1){
-        //now we loop forever
+        lcdCommand(0x01);
+        _delay_ms(20);
+
+        for(int i = 0; i <16; i++){
+            char c = inputMessage[(i + pos) % len];
+            lcdData(c);
+        }
+        pos = (pos + 1) & len;
+        _delay_ms(300);
     }
+    
 
     return 0; //hell yeah im a fucking Bare metal C developer
 }
