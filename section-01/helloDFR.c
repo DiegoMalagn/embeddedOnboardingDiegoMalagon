@@ -90,5 +90,5 @@ int main(void){
         //now we loop forever
     }
 
-    return 0;
+    return 0; //hell yeah im a fucking Bare metal C developer
 }
