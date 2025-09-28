@@ -1,5 +1,6 @@
-# MCU and clock
+# MCU
 MCU = atmega328p
+# Clock frequency
 F_CPU = 16000000UL
 
 # Compiler flags
@@ -10,14 +11,15 @@ PROGRAMMER = arduino
 PORT = /dev/tty.usbmodem11101
 BAUD = 115200
 
-# Files
+#make sure to change the TARGET name for future projects
 TARGET = helloDFR
+#source file
 SRC = $(TARGET).c
 
-# Tools
-CC = avr-gcc
-OBJCOPY = avr-objcopy
-AVRDUDE = avrdude
+# tool chain
+CC = avr-gcc #compiler
+OBJCOPY = avr-objcopy # hex file generator
+AVRDUDE = avrdude # this one flases the hex file into the microcontroller
 
 all: $(TARGET).hex
 
