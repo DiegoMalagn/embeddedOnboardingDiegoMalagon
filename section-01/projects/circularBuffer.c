@@ -16,10 +16,7 @@ bool isEmpty(circularBuffer *cb);
 bool isFull(circularBuffer *cb);
 
 int main(){
-    circularBuffer cb;
-    cb.head = 0;
-    cb.tail = 0;
-    cb.count = 0;
+    circularBuffer cb = {.head = 0, .count = 0, .tail = 0};
 
     for(int i=0;i<8; i++){
         if (enqueue(&cb, i)){
@@ -34,7 +31,7 @@ int main(){
     int val;
     for(int i = 0; i < 3; i++){
         if(dequeue(&cb, &i)){
-            printf("dequeued %d", i);
+            printf("dequeued %d\n", i);
         }
     }
 
