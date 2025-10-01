@@ -22,7 +22,7 @@ int main(){
     cb.count = 0;
 
     for(int i=0;i<8; i++){
-        if (enqueue(&cb, &i)){
+        if (enqueue(&cb, i)){
             printf("enqueued %d\n", i);
         }
         else
