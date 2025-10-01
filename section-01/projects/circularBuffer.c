@@ -30,7 +30,7 @@ int main(){
 
     int val;
     for(int i = 0; i < 3; i++){
-        if(dequeue(&cb, &i)){
+        if(dequeue(&cb, &val)){
             printf("dequeued %d\n", i);
         }
     }
