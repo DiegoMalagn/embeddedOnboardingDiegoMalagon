@@ -1,29 +1,28 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-#define SIZE 8;
+#define SIZE 8
 
+typedef struct{
+    int buffer[SIZE];
+    int tail;
+    int head;
+    int count;
+} circularBuffer;
 bool enqueue(circularBuffer *cb, int value);
 bool dequeue(circularBuffer *cb, int *value);
 void printBuffer(circularBuffer *cb);
 bool isEmpty(circularBuffer *cb);
 bool isFull(circularBuffer *cb);
 
-typedef struct{
-    int buffer[8];
-    int tail;
-    int head;
-    int count;
-} circularBuffer;
-
 int main(){
     circularBuffer cb;
-    (&cb)->head = 0;
-    (&cb)-> tail = 0;
-    (&cb) -> count = 0;
+    cb.head = 0;
+    cb.tail = 0;
+    cb.count = 0;
 
-    for(int i=0;i<=8; i++){
-        if (enqueue(&cb, i)){
+    for(int i=0;i<8; i++){
+        if (enqueue(&cb, &i)){
             printf("enqueued %d\n", i);
         }
         else
@@ -34,7 +33,7 @@ int main(){
 
     int val;
     for(int i = 0; i < 3; i++){
-        if(dequeue(&cb, i)){
+        if(dequeue(&cb, &i)){
             printf("dequeued %d", i);
         }
     }
@@ -47,6 +46,7 @@ int main(){
 
     return 0;
 }
+
 bool isFull(circularBuffer *cb){
     return cb->count == SIZE;
 }
